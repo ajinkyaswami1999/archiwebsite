@@ -1,0 +1,381 @@
+* {
+    margin: 0;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.nav {
+    background-color: transparent;
+    backface-visibility: unset;
+    color: goldenrod;
+    display: flex;
+    padding: 10px 20px 10px 20px;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+}
+
+.logo {
+    font-size: xx-large;
+    cursor: pointer;
+}
+
+.menu {
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: transparent
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 4;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+
+ul {
+    list-style: none;
+    display: flex;
+    cursor: pointer;
+}
+
+
+li {
+    margin: 10px 10px 10px 10px;
+    transition: font-weight 0.3s ease; /* Add transition for smoother effect */
+}
+
+li a{
+    color: rgb(218, 165, 32); /* Set link text color to white */
+    text-decoration: none; /* Remove underline from the link */
+}
+
+/* Make text bold on hover */
+li:hover {
+    font-weight: bold;
+}
+
+.scroll-container {
+    position: relative;
+    width: 100%;
+    height: 120%; /* Set the desired height */
+    overflow: hidden;
+    background-color: transparent; /* Set the background color */
+}
+
+.image-wrapper {
+    white-space: nowrap;
+    height: 100%;
+    width: 500%; /* Adjust based on the number of images */
+    /* animation: scrollImages 20s linear infinite; */
+    background-size: cover;
+    transition: transform ease-in-out 0.6s
+}
+
+.image-wrapper img {
+    height: 100%;
+    width: 20%; /* Adjust based on the number of images */
+    transition: transform ease-in-out 5s; /* Add transition for smoother effect */
+    /* display: none; */
+    vertical-align: top;
+    background-size: cover;
+}
+
+.image-wrapper img.active{
+    /* display: block; */
+}
+
+@keyframes scrollImages {
+    0% {
+        transform: translateX(0px);
+    }
+    100% {
+        transform: translateX(-10px);
+    }
+}
+
+
+/* About Us */
+.about-us-main{
+    margin-left: 35px;
+    margin-right: 35px;
+}
+.about-us {
+    position: relative;
+    display: flex;
+    justify-content: center; /* horizontal alignment */
+    align-items: center; /* vertical alignment */
+    font-size: 50px; /* adjust font size as needed */
+    cursor: pointer; /* Change cursor on hover to indicate interactivity */
+    text-decoration: underline;
+    text-decoration-thickness: 2px; /* Adjust the thickness as needed */
+    text-underline-offset: 10px; /* Adjust the space between text and underline */
+}
+
+/* Footer */
+
+footer{
+     background-color: #000000ff;
+     position: relative;
+     width: 100%;
+     min-height: 350px;
+     padding: 3rem 1rem;
+}
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.col{
+    min-width: 250px;
+    color:#f2f2f2f2;
+    font-family: poppins;
+    padding:0 2rem;
+}
+.col .logo{
+    width: 100px;
+    margin-bottom:25px;
+}
+.col h3{
+    color:rgb(223, 216, 218);
+    margin-bottom: 20px;
+    position: relative;
+    cursor: pointer;
+}
+.col h3::after{
+    content: '';
+    height:3px;
+    width:0px;
+    background-color: rgb(223, 216, 218);
+    position: absolute;
+    bottom: 0;
+    left:0;
+    transition: 0.3s ease;
+
+}
+.col h3:hover::after{
+    width:30px
+}
+.instagram {
+    width: 40px; /* Adjust the width as needed */
+    height: 40px; /* Adjust the height as needed */
+}
+
+/* Optional: Add hover effect */
+.instagram:hover {
+    opacity: 0.7; /* Adjust opacity for hover effect */
+}
+/* .col .social a i{
+    color:rgb(223, 216, 218);
+    margin-top:2rem;
+    margin-right: 5px;
+    transition: 0.3s ease;
+}
+.col .social a i:hover{
+    transform: scale(1.5);
+    filter:grayscale(25);
+} */
+.col .links a{
+    display: block;
+    text-decoration: none;
+    color:#f2f2f2;
+    margin-bottom: 5px;
+    position: relative;
+    transition: 0.3s ease;
+}
+.col .links a::before{
+    content:'';
+    height: 16px;
+    width:3px;
+    position: absolute;
+    top:5px;
+    left:-8px;
+    background-color: rgb(223, 216, 218);
+    transition: 0.5s ease;
+    opacity: 0;
+}
+.col .links a:hover::before{
+    opacity: 1;
+}
+.col .links a:hover{
+    transform: translateX(-8px);
+    color:rgb(223, 216, 218);
+}
+.col .contact-details{
+    display: inline-flex;
+    justify-content: space-between;
+}
+.col .contact-details i{
+    margin-right:15px;
+}
+.row .form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:2rem 0;
+}
+.row .form input{
+    background-color: rgb(255, 255, 255);
+    border:0;
+    outline:none;
+    padding:14px 20px;
+    border-radius: 6px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.form button{
+    padding:14px 20px;
+    border:0;
+    border-radius: 6px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    background-color: rgb(68, 64, 64);
+    cursor: pointer;
+}
+
+/********** Responsive Design ********/
+@media(max-width:900px)
+{
+  .row{
+    flex-direction: column;
+  }
+  .col{
+    width: 100%;
+    text-align: left;
+    margin-bottom: 25px;
+  }
+}
+@media(max-width:768px)
+{
+  .row{
+    flex-direction: column;
+  }
+  .col{
+    width: 100%;
+    text-align: left;
+    margin-bottom: 20px;
+  }
+}
+
+/* contact page */
+
+.contact-page{
+    padding: 0px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.contact-page-heading h1{
+    font-family: 'Montserrat', sans-serif !important;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 42px;
+    line-height: 48px;
+    text-align: center;
+    margin-top: 60px;
+    text-transform: uppercase;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 10px;
+}
+.contact-page-address{
+    margin-top: 50px;
+    margin-left: 35px;
+    margin-right: 35px;
+}
+
+.contact-page-address h4{
+    font-family: 'Montserrat', sans-serif !important;
+    font-style: normal;
+    font-weight: 300;
+    color: #D31122;
+    font-size: 24px;
+    line-height: 32px;
+    text-align: center;
+}
+.contact-page-address p{
+    font-family: 'Montserrat', sans-serif !important;
+    font-style: normal;
+    font-weight: 300;
+    color: #333333;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    margin-top: 15px;
+}
+.contact-page-members{
+    margin-top: 50px;
+    margin-right: 35px;
+    margin-left: 35px;
+}
+.contact-page-members-1{
+    box-sizing: border-box;
+    padding-left: 25px;
+    float: left;
+    text-align: center;
+}
+.contact-page-members-2{
+    font-family: 'Montserrat', sans-serif !important;
+    font-style: normal;
+    font-weight: 300;
+    color: #333333;
+}
+
+/* Our Team */
+.our-team {
+    text-align: center; /* Center align the content */
+    margin-top: 50px; /* Adjust as needed */
+}
+
+.our-team button {
+    background-color: rgb(77, 77, 77); /* Set button background color to grey */
+    color: white; /* Set button text color to white */
+    padding: 10px 20px; /* Add padding to the button */
+    border: none; /* Remove button border */
+    border-radius: 5px; /* Add border-radius for rounded corners */
+    text-decoration: none; /* Remove underline from the link */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.our-team button a {
+    color: white; /* Set link text color to white */
+    text-decoration: none; /* Remove underline from the link */
+}
+
+.our-team button:hover {
+    background-color: rgb(58, 58, 58); /* Change background color on hover */
+}
+
+/* our team page */
+
+.ourteam-main{
+    margin-left: 35px;
+    margin-right: 35px;
+}
+.ourteam-heading{
+    position: relative;
+    display: flex;
+    justify-content: center; /* horizontal alignment */
+    align-items: center; /* vertical alignment */
+    font-size: 50px; /* adjust font size as needed */
+    text-decoration: underline;
+    text-decoration-thickness: 2px; /* Adjust the thickness as needed */
+    text-underline-offset: 10px; /* Adjust the space between text and underline */
+    text-decoration-color: #D31122;
+}
